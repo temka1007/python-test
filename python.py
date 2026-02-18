@@ -1,15 +1,5 @@
-def quicksort(arr):
-    if len(arr) <= 1:
-        return arr
+from sklearn import metrics
 
-    pivot = arr[0]
-
-    left = [x for x in arr[1:] if pivot > x]
-    right = [x for x in arr[1:] if pivot <= x]
-
-    return quicksort(left) + [pivot] + quicksort(right)
-
-
-test = [4, 3, 2, 7, 7, 6, 1, 5, 9, 7, 8, 10, 11]
-
-print(quicksort(test))
+labels_true = [0, 0, 0, 1, 1, 1]
+labels_pred = [0, 0, 1, 1, 2, 2]
+metrics.rand_score(labels_true, labels_pred)
